@@ -1,0 +1,12 @@
+@use './colors.scss';
+
+
+
+
+@mixin button_styling {
+    color: $primary_red;
+    background: $primary_blue;
+    
+}
+
+

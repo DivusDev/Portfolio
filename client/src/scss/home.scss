@@ -1,0 +1,83 @@
+@use './constants/colors.scss';
+
+
+
+
+.name{
+    color: colors.$primary_red;
+
+}
+
+.home-button {
+    background: colors.$primary_red;
+}
+
+.home.background {
+    // height: max(100%, 100vh);
+    height: 100%;
+    width: 100%;
+    background: colors.$primary_grey;
+}
+
+.title-container {
+
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 40vh;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+
+    // .title-triangle {
+    //     // triangle code
+    //     z-index: 1;
+    //     border-top: 40vh solid colors.$primary_blue;
+    //     border-right: 100vw solid transparent;
+    //     position: absolute;
+    // }
+
+    .title-intro {
+        margin-top: 8rem;
+        width: 100%;
+        z-index: 10;
+        font-weight: 1000;
+        color: colors.$primary_red;
+        font-size: 4rem;
+        text-align: center;
+    }
+    
+
+    .title-name {
+        width: 100%;
+        z-index: 10;
+        font-weight: 1000;
+        color: colors.$primary_red;
+        font-size: 8rem;
+        margin: auto;
+        text-align: center;
+    }
+
+    .title-subheading {
+        width: 100%;
+        z-index: 10;
+        font-weight: 800;
+        font-style: italic;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+
+.aboutme-container {
+
+}
+
+
+
+
+.scrollpage {
+    min-height: 100vh;
+}
