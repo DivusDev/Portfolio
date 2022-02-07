@@ -1,4 +1,6 @@
+@use './constants/colors.scss';
 
+//First wave
 .custom-shape-divider-top-1644127656 {
     position: absolute;
     top: 0;
@@ -17,15 +19,50 @@
 }
 
 .custom-shape-divider-top-1644127656 .shape-fill {
-    fill: #314554;
+    fill: colors.$primary_blue;
 }
 
-.custom-shape-divider-top-part-1644127656 {
+.custom-shape-divider-top-part {
     height: 40vh;
     display: block;
-    background: #314554;
+
+    &.shape-primary_blue {
+        background: colors.$primary_blue;
+    }
+
+    &.shape-primary_red {
+        background: colors.$primary_red;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
 }
 
 
 
+//Second wave
 
+.custom-shape-divider-bottom-1644168466 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1644168466 svg {
+    position: relative;
+    display: block;
+    width: calc(105% + 1.3px);
+    height: 317px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1644168466 .shape-fill {
+    fill: colors.$primary_red;
+    position: absolute;
+    top:0;
+}

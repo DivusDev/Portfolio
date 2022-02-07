@@ -24,10 +24,11 @@
     display:flex;
     justify-content: center;
     flex-direction: column;
-    height: 40vh;
+    height: 50vh;
     align-items: center;
     position: relative;
     z-index: 100;
+    padding-top: 10vh;
 
     // .title-triangle {
     //     // triangle code
@@ -70,8 +71,135 @@
     }
 }
 
+.in-touch-button {
+    z-index: 1;
+    margin-top: 4rem;
+    a {
+        padding: 1rem 3rem;
+        font-weight: 800;
+        font-size: 2rem;
+        border: 3px solid colors.$primary_red;
+        color: white;
+        font-style: italic;
+        border-radius: 1px;
+        transition: .3s;
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+
+        //gradient transition
+        position: relative;
+        background-image: linear-gradient(
+          to right,
+          colors.$primary_grey,
+          colors.$primary_light_grey
+        );
+        z-index: 1;
+
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(
+              to bottom,
+              colors.$primary_light_grey,
+              colors.$primary_grey
+            );
+            z-index: -1;
+            transition: opacity 0.3s linear;
+            opacity: 0;
+        }
+
+        &:hover::before {
+            opacity: 1;
+            cursor: pointer;
+          }
+
+
+          // shine effect 
+          clip-path: inset(0);  //to remove edges
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -23%;
+            width: 15%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: skewX(-30deg);
+            transition: 0.4s;
+
+
+        } 
+          
+          &:hover:after {
+            left: 110%;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+          }
+    }
+}
 
 .aboutme-container {
+
+    height: 90%;
+    width: 60%;
+    padding: 10% 20% 0 20%;
+    display: flex;
+    justify-content: space-around;
+
+    .aboutme-description{
+        flex-grow: 2;
+        padding-right: 1rem;
+        .heading-div {
+            flex-grow: 2;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            border-bottom: 3px solid white;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        .subheading-div{
+            padding-top: 1rem;
+            .subheading {
+                color: white;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                display: block;
+                font-weight: 200;
+                margin-bottom: 30px;
+                
+                .subheading-aside {
+                    color: rgba(255, 255, 255, 0.404);
+
+                    font-size: 1.2rem;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+    
+
+    .aboutme-photo-container{
+        .aboutme-photo {
+            background-image: url('../../public/photos/Kuliouou1.jpg');
+            height: 400px;
+            width: 400px;
+            clip-path: circle(200px);
+            background-size: 400px;
+            background-position-y: -20px;
+            
+        }
+    }
 
 }
 
@@ -80,4 +208,74 @@
 
 .scrollpage {
     min-height: 100vh;
+    position: relative;
 }
+
+
+.page-divider {
+    position: absolute; 
+    bottom: 5%;
+    border-bottom: 3px solid colors.$primary_light_grey;
+    left: 35%;
+    width: 30%;
+    border-radius: 5px;
+
+    .circle {
+        position: absolute;
+        bottom: -1vh;
+        left: 48%;
+        width: 2vh;
+        height: 2vh;
+        background: colors.$primary_light_grey;
+        border-radius: 4vh;
+        .small-circle {
+            position: absolute;
+            bottom: .5vh;
+            left: .5vh;
+            width: 1vh;
+            height: 1vh;
+            background: colors.$primary_grey;
+            border-radius: 4vh;
+        }
+
+    }
+}
+
+.hover-container {
+    display: flex;
+    width: 100%;
+    height: calc(2rem + 22px);
+    justify-content: center;
+    align-items: center;
+
+    .hover-letter{
+        color:white;
+        font-size: 2rem;
+        font-weight: 600;
+        transition: 1s;
+        cursor: default;
+        position: relative;
+    
+      
+
+   
+       
+        &:hover {
+            // get next 4 elements including current one - for more even selections
+            &, & + .hover-letter, & + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter,
+            & + .hover-letter + .hover-letter + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter  {
+                color: colors.$primary_red;
+                text-shadow: 0px 10px #0000002a;
+                transition: .1s;
+                cursor: default;
+                padding-bottom: 20px;
+            }
+            //staggered padding for more even look
+            & { transition: .3s; }
+            & + .hover-letter, & + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .1s; }
+            & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .3s; }
+            
+        }
+    }
+}
+
