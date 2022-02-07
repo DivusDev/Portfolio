@@ -256,8 +256,16 @@
         cursor: default;
         position: relative;
     
-      
-
+      // to increase size of hover box
+        &::after{
+            content: '';
+            height: 6rem;
+            width:1rem;
+            // border: solid 1px greenyellow;    //uncomment to visualize hover box
+            left: 0;
+            bottom: -2rem;
+            position: absolute;
+        }
    
        
         &:hover {
