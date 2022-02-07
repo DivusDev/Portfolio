@@ -17,7 +17,7 @@ const ProtectedRoute  = (Component) => {
   // setNewActiveTab(rest.location.pathname)
   return (
         <>
-          {/* <Navbar  /> */}
+          <Navbar  />
           {Component}
         </>
   );
