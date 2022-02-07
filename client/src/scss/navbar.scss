@@ -1,0 +1,18 @@
+@use './constants/colors.scss';
+
+.MuiAppBar-root{
+    //root div
+    background-color: colors.$primary_blue !important;
+    border-bottom: 3px colors.$primary_light_blue solid !important;
+    position: sticky !important;
+    top: 0 !important;
+} 
+
+.nav-button {
+    color: white !important;
+    margin: 0 3rem !important;
+    padding-bottom: 2px !important;
+    width: 10% !important;
+    border-bottom: colors.$primary_dark_blue 3px solid !important ;
+
+}

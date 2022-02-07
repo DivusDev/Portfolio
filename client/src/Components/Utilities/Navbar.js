@@ -2,6 +2,8 @@ import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Too
 import React from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 
+//scss
+import '../../scss/navbar.scss' 
 
 
 export const Navbar = () => {
@@ -25,22 +27,17 @@ export const Navbar = () => {
     };
    
     
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['Dev', 'Photography', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
    
    return (
    <AppBar position="static">
     <Container maxWidth="xl">
       <Toolbar disableGutters>
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-        >
-          
-        </Typography>
 
+        {/* Displayed when above medium */}
+   
+        {/* Displayed when below medium */}
         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
           <IconButton
             size="large"
@@ -77,6 +74,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
             ))}
           </Menu>
         </Box>
+
+
+        {/* displayed when below medium */}
         <Typography
           variant="h6"
           noWrap
@@ -85,12 +85,15 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
         >
           LOGO
         </Typography>
+
+        {/* displayed when above medium */}
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (
             <Button
               key={page}
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: 'white', display: 'block' }}
+              className='nav-button'
             >
               {page}
             </Button>
@@ -98,7 +101,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
         </Box>
 
         {/* right side  */}
-        <Box sx={{ flexGrow: 0 }}>
+        {/* <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt="Remy Sharp" />
@@ -126,7 +129,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
               </MenuItem>
             ))}
           </Menu>
-        </Box>
+        </Box> */}
       </Toolbar>
     </Container>
   </AppBar>
