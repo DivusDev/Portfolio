@@ -3,6 +3,7 @@ import { Component } from "react";
 
 
 import '../../scss/home.scss'
+import { projects } from "../Utilities/PageData";
 
 
 
@@ -13,8 +14,6 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
-
         }
     }
 
@@ -22,7 +21,23 @@ class Home extends Component {
 
     generateHoverText = (text) => <div className='hover-container' >{text.split('').map(v =>  <div className='hover-letter' style={v != ' ' ? {} : { paddingLeft:'1rem'}  }>{v}</div>)}</div> 
 
+    generateProjectJSX = (project) => <div className='projects-container'>
+    <div className={`project ${project.leftOrRight}`}>
+        <div className={`project-photo-container `}>
+            <div className={`project-photo-backdrop ${project.leftOrRight}`}></div>
+            <a href={project.projectURL}><div className={`project-photo ${project.css_class_name}`}></div></a>
+        </div>
+        <div className='project-description'>
+            <div className='project-heading'>
+                {project.title}
+            </div>
+            <div className='project-subheading'>
+                {project.description}
+            </div>
+        </div>
+    </div>
 
+</div>  
 
 
     render() {
@@ -54,8 +69,8 @@ class Home extends Component {
                     {this.generatePageDivider()}
                 </Grid>
                 <Grid item className='scrollpage '  xs={12}>
-                    <div className='aboutme-container'>
-                        <div className='aboutme-description'>
+                    <div className='aboutme page-container'>
+                        <div className='description'>
                             <div className="heading-div">
                                 <span className='heading'>About Me</span>
                             </div>
@@ -83,14 +98,17 @@ class Home extends Component {
                         </svg>
                     </div>
                 </Grid>
-                <Grid item className='scrollpage ' style={{minHeight: 0}} xs={12}>
-                    
-                    <div class='custom-shape-divider-top-part shape-primary_red'>
+                <Grid item className='scrollpage red_page ' style={{minHeight: 0, paddingBottom: '20%'}} xs={12}>
+                    <div className='page-container projects'>
+                        <div className='description projects'>
+                            <div className="heading-div projects">
+                                <span className='heading'>Projects</span>
+                            </div>
+                        </div>
 
+                        {Object.values(projects).map(this.generateProjectJSX)}
                         
-
                     </div>
-
                     
                 </Grid>
             </Grid>

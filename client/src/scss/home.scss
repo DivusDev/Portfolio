@@ -148,17 +148,21 @@
     }
 }
 
-.aboutme-container {
+.page-container {
 
-    height: 90%;
+    min-height: 90%;
     width: 60%;
     padding: 10% 20% 0 20%;
     display: flex;
     justify-content: space-around;
 
-    .aboutme-description{
+
+    .description{
         flex-grow: 2;
         padding-right: 1rem;
+        &.projects {
+            flex-grow: 0;
+        }
         .heading-div {
             flex-grow: 2;
             color: white;
@@ -167,6 +171,11 @@
             border-bottom: 3px solid white;
             width: 50%;
             margin-bottom: 10px;
+
+            &.projects {
+                color: white;
+                border-bottom: 3px solid white;
+            }
         }
         .subheading-div{
             padding-top: 1rem;
@@ -201,14 +210,108 @@
         }
     }
 
+    &.projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .projects-container {
+        display: block;
+        width: 100%;
+        padding-top: 2rem;
+        .project {
+            display: flex;
+            justify-content: space-around;
+
+            &.left {   // picture on left
+                flex-direction: row;
+            }
+            &.right{ // picture on right
+                flex-direction: row-reverse;
+            }
+
+            .project-photo-container{
+                position: relative;
+
+                .project-photo-backdrop {
+                    height: 400px;
+                    width: 400px;
+                    position: absolute;
+                    border-radius: 20px;
+                    background: colors.$primary_blue;
+                    z-index: 1;
+                    top:40px;
+
+                    //makes the background to the bottom left
+                    &.left { left: -40px; }
+                    //makes the background to the bottom right
+                    &.right { left: 40px; }
+                }
+
+                .project-photo {
+                    position:relative;
+                    height: 400px;
+                    width: 400px;
+                    background-repeat: no-repeat;
+                    border-radius: 20px;
+                    z-index: 2;
+                    cursor: pointer;
+
+
+                    //different urls for different picture and sizes go here 
+                    &.password_app{
+                        background-image: url('../../public/photos/password_app.PNG');
+                        background-size: 500px;
+                        background-position-x: -50px;
+                    }
+
+                    &.chat_app {
+                        background-image: url('../../public/photos/chatboxx_app.PNG');
+                        background-size: 500px;
+                        background-position-x: -50px;
+                    }
+                } 
+            }
+
+            .project-description{
+                margin: 1rem 4rem;
+                color: white;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .project-heading{
+                    font-size: 1.8rem;
+                    border-bottom: 2px solid white;
+                    width: 80%;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    font-style: italic;
+                }
+
+                .project-subheading {
+                    font-size: 1.2rem;
+                    font-style: italic;
+
+                }
+            }
+        }
+    }
+
 }
 
 
 
 
 .scrollpage {
-    min-height: 100vh;
+    min-height: max(100vh,800px) ;
     position: relative;
+
+    &.red_page {
+        background-color: colors.$primary_red;
+    }
 }
 
 
