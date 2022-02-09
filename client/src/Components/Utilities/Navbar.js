@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 //scss
 import '../../scss/navbar.scss' 
+import { ForkLeft } from "@mui/icons-material";
 
 
 export const Navbar = () => {
@@ -33,7 +34,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
    return (
    <AppBar position="static">
     <Container maxWidth="xl">
-      <Toolbar disableGutters>
+      <Toolbar disableGutters className>
 
         {/* Displayed when above medium */}
    
@@ -77,15 +78,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
         {/* displayed when below medium */}
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-        >
-          LOGO
-        </Typography>
+          <div className='navbar-logo'></div>
 
+          
         {/* displayed when above medium */}
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (

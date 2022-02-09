@@ -16,3 +16,17 @@
     border-bottom: colors.$primary_dark_blue 3px solid !important ;
 
 }
+
+.navbar-logo{
+    background-image: url('../../public/photos/TS-logo_noname.png');
+    width: 52px;
+    height: 39px;
+    filter:invert(1);
+    background-repeat: no-repeat;
+    background-size: 50px;
+    margin-top: 5px;
+    margin:auto;
+
+    cursor: pointer;
+
+}
