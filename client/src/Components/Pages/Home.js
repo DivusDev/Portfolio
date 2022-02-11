@@ -3,7 +3,7 @@ import { Component } from "react";
 
 
 import '../../scss/home.scss'
-import { projects } from "../Utilities/PageData";
+import { workRelatedProjects, personalProjects } from "./PageData";
 
 
 
@@ -62,7 +62,7 @@ class Home extends Component {
                             }</span>
                         <span className='title-subheading'>Currently making dreams reality with MakeItHappen.NYC</span>
                         <div className='in-touch-button'>
-                        <a href="mailto:tschwichow@gmail.com?subject=Software%20Engineering%20Oppertunity&amp;body=Let%27s%20talk%20about%20Tristan%0D%0DYou%20can%20also%20reach%20me%20at%20808%20347%200684%0D" class="button">GET IN TOUCH</a>
+                        <a href="mailto:tschwichow@gmail.com?subject=Software%20Engineering%20Opportunity&amp;body=I%20dont%20Bite%20:)%0D%0DYou%20can%20also%20reach%20me%20at%20808%20347%200684%0D" class="button">GET IN TOUCH</a>
                         </div>
                     </div>
 
@@ -98,15 +98,30 @@ class Home extends Component {
                         </svg>
                     </div>
                 </Grid>
+                
                 <Grid item className='scrollpage red_page ' style={{minHeight: 0, paddingBottom: '20%'}} xs={12}>
                     <div className='page-container projects'>
                         <div className='description projects'>
                             <div className="heading-div projects">
-                                <span className='heading'>Projects</span>
+                                <span className='heading'>Work Related Projects</span>
                             </div>
                         </div>
 
-                        {Object.values(projects).map(this.generateProjectJSX)}
+                        {Object.values(workRelatedProjects).map(this.generateProjectJSX)}
+                        
+                    </div>
+                    
+                </Grid>
+
+                <Grid item className='scrollpage red_page ' style={{minHeight: 0, paddingBottom: '20%'}} xs={12}>
+                    <div className='page-container projects'>
+                        <div className='description projects'>
+                            <div className="heading-div projects">
+                                <span className='heading'>Personal Projects</span>
+                            </div>
+                        </div>
+
+                        {Object.values(personalProjects).map(this.generateProjectJSX)}
                         
                     </div>
                     
