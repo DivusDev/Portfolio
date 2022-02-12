@@ -2,6 +2,7 @@
 
 
 
+
 $primary_red: #cc3b4a;
 
 $primary_dark_blue: #263541;
@@ -15,3 +16,22 @@ $primary_light_grey: #3d3d3d;
 
 
 $primary_yellow: #FFEE58;
+
+
+
+
+
+
+$gradient_primary_grey_to_primary_red:   linear-gradient(
+  180deg,
+  hsl(206deg 26% 26%) 0%,
+  hsl(244deg 8% 30%) 11%,
+  hsl(326deg 12% 32%) 23%,
+  hsl(345deg 20% 35%) 34%,
+  hsl(351deg 27% 38%) 45%,
+  hsl(353deg 33% 41%) 57%,
+  hsl(354deg 39% 44%) 68%,
+  hsl(355deg 44% 47%) 79%,
+  hsl(354deg 49% 49%) 89%,
+  hsl(354deg 59% 52%) 100%
+);

@@ -1,4 +1,6 @@
 @use './constants/colors.scss';
+@use './constants/breakpoints.scss';
+
 
 
 
@@ -29,6 +31,10 @@
     position: relative;
     z-index: 100;
     padding-top: 10vh;
+
+    @include breakpoints.laptop{
+        padding-top: 8%;
+    }
 
     // .title-triangle {
     //     // triangle code
@@ -155,7 +161,14 @@
     padding: 10% 20% 0 20%;
     display: flex;
     justify-content: space-around;
+    position: relative;
+    z-index: 10;
 
+    @include breakpoints.laptop{
+        padding: 10% 10% 0 10%;
+        width: 80%;
+
+    }
 
     .description{
         flex-grow: 2;
@@ -234,6 +247,7 @@
             .project-photo-container{
                 position: relative;
 
+                
                 .project-photo-backdrop {
                     height: 400px;
                     width: 400px;
@@ -242,12 +256,18 @@
                     background: colors.$primary_blue;
                     z-index: 1;
                     top:40px;
+                    transition: .5s;
 
                     //makes the background to the bottom left
                     &.left { left: -40px; }
                     //makes the background to the bottom right
                     &.right { left: 40px; }
+
+                    //changes the color of the backdrop
+                    &.backdrop_grey { background: colors.$primary_grey }
+
                 }
+        
 
                 .project-photo {
                     position:relative;
@@ -278,9 +298,17 @@
                         background-position-x: -50px;
                     }
                 } 
+
+                //hover over photo container
+                &:hover {
+                    .project-photo-backdrop{
+                        &.left{ transform: translate( 40px, -40px ) }
+                        &.right{ transform: translate( -40px, -40px ) }
+                    }
+                }
             }
 
-            .project-description{
+            .project-information{
                 margin: 1rem 4rem;
                 color: white;
                 align-items: center;
@@ -293,15 +321,67 @@
                     border-bottom: 2px solid white;
                     width: 80%;
                     text-align: center;
-                    margin-bottom: 2rem;
+                    margin-bottom: .8rem;
                     font-style: italic;
                 }
 
                 .project-subheading {
+                    font-size: .9rem;
+                    font-weight: lighter;
+                    font-style: italic;
+                    color:rgba(255, 255, 255, 0.493);
+                    margin-bottom: 1.2rem;
+                }
+
+                .project-description {
                     font-size: 1.2rem;
                     font-style: italic;
 
                 }
+
+                .project-icons {
+                    margin-top: 2rem;
+                    display: flex;
+                    justify-content: space-around;
+                    width: 50%;
+                    a {
+                        align-items: center;
+                        display: inline-flex;
+                        text-decoration: none;
+                        text-shadow: none;
+                        color: white;
+                        transition: .3s;
+                        &:hover {
+                            color: grey;
+                        }
+                        &:active {
+                            color: white;
+                            text-decoration: none;
+                        }
+                        span {
+                            display: inline-flex;
+                            align-items: center;
+                            text-align: center;
+                            line-height: 100%;
+                            font-size: .8rem;
+                        }
+                        svg {
+                            margin-right: .4rem;
+                        }
+
+                        //specific p5js icon
+                        &.p5js{
+                            height: 2rem;
+                            width: 2rem;
+                            background: white;
+                            color: colors.$primary_blue;
+                            font-size: 1.2rem;
+                            &:hover { background: grey; color: white }
+                        }
+                    }
+                }
+
+
             }
         }
     }
@@ -314,9 +394,12 @@
 .scrollpage {
     min-height: max(100vh,800px) ;
     position: relative;
-
+    z-index: 1;
     &.red_page {
         background-color: colors.$primary_red;
+    }
+    &.blue_page {
+        background-color: colors.$primary_blue;
     }
 }
 
@@ -353,46 +436,60 @@
 .hover-container {
     display: flex;
     width: 100%;
-    height: calc(2rem + 22px);
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
-    .hover-letter{
-        color:white;
-        font-size: 2rem;
-        font-weight: 600;
-        transition: 1s;
-        cursor: default;
-        position: relative;
-    
-      // to increase size of hover box
-        &::after{
-            content: '';
-            height: 6rem;
-            width:1rem;
-            // border: solid 1px greenyellow;    //uncomment to visualize hover box
-            left: 0;
-            bottom: -2rem;
-            position: absolute;
-        }
-   
-       
-        &:hover {
-            // get next 4 elements including current one - for more even selections
-            &, & + .hover-letter, & + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter,
-            & + .hover-letter + .hover-letter + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter  {
-                color: colors.$primary_red;
-                text-shadow: 0px 10px #0000002a;
-                transition: .1s;
-                cursor: default;
-                padding-bottom: 20px;
+
+
+    .hover-word {
+        height: calc(2rem + 22px);
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: calc(2rem + 22px);
+        //for spacing 
+        margin-left: 1rem;
+        &:first-of-type{ margin-left: 0rem; }
+
+        .hover-letter{
+            color:white;
+            font-size: 2rem;
+            font-weight: 600;
+            transition: 1s;
+            cursor: default;
+            position: relative;
+        
+        // to increase size of hover box
+            &::after{
+                content: '';
+                height: 6rem;
+                width:1rem;
+                // border: solid 1px greenyellow;    //uncomment to visualize hover box
+                left: 0;
+                bottom: -2rem;
+                position: absolute;
             }
-            //staggered padding for more even look
-            & { transition: .3s; }
-            & + .hover-letter, & + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .1s; }
-            & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .3s; }
-            
+    
+        
+            &:hover {
+                // get next 4 elements including current one - for more even selections
+                &, & + .hover-letter, & + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter,
+                & + .hover-letter + .hover-letter + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter  {
+                    color: colors.$primary_red;
+                    text-shadow: 0px 10px #0000002a;
+                    transition: .1s;
+                    cursor: default;
+                    padding-bottom: 20px;
+                }
+                //staggered padding for more even look
+                & { transition: .3s; }
+                & + .hover-letter, & + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .1s; }
+                & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .3s; }
+                
+            }
         }
     }
+   
 }
 

@@ -14,6 +14,14 @@
     padding-bottom: 2px !important;
     width: 10% !important;
     border-bottom: colors.$primary_dark_blue 3px solid !important ;
+    position: relative;
+    height: 2rem;
+    min-width: 6rem;
+    span{
+        transition: transform 1s, color .5s ;
+        position: absolute;
+        .squeeze { transform:scale(0); color:colors.$primary_blue; }
+    }
 
 }
 

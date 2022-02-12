@@ -1,9 +1,16 @@
+
+//component imports
 import { Grid } from "@material-ui/core";
 import { Component } from "react";
 
 
+//css and data
 import '../../scss/home.scss'
 import { workRelatedProjects, personalProjects } from "./PageData";
+
+
+//icons 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
@@ -17,27 +24,45 @@ class Home extends Component {
         }
     }
 
+    // ****************************************************************************************
+    // ********************************** Component Handlers **********************************
+    // ****************************************************************************************
+
+
+    // ******************************************************************************************
+    // ********************************** Component Generators **********************************
+    // ******************************************************************************************
+
     generatePageDivider = (styleObj) => <div className="page-divider" style={styleObj}> <div className="circle"><div className="small-circle"></div><div></div></div></div>
 
-    generateHoverText = (text) => <div className='hover-container' >{text.split('').map(v =>  <div className='hover-letter' style={v != ' ' ? {} : { paddingLeft:'1rem'}  }>{v}</div>)}</div> 
+    generateHoverText = ( text ) => <div className='hover-container' >{text.split( ' ' ).map( word => <div className='hover-word'>{word.split( '' ).map( letter => <div className='hover-letter' >{letter}</div> )}</div> )}</div> 
 
     generateProjectJSX = (project) => <div className='projects-container'>
     <div className={`project ${project.leftOrRight}`}>
         <div className={`project-photo-container `}>
-            <div className={`project-photo-backdrop ${project.leftOrRight}`}></div>
+                <div className={`project-photo-backdrop ${project.leftOrRight} ${project.backdropColor ?? ''}`}></div>
             <a href={project.projectURL}><div className={`project-photo ${project.css_class_name}`}></div></a>
         </div>
-        <div className='project-description'>
-            <div className='project-heading'>
-                {project.title}
-            </div>
-            <div className='project-subheading'>
-                {project.description}
+            <div className='project-information'>
+                <div className='project-heading'>
+                    {project.title}
+                </div>
+                <div className='project-subheading'>
+                    {project.subheading}
+                </div>
+                <div className='project-description'>
+                    {project.description}
+                </div>
+                <div className='project-icons'>
+                    {project.icons}
+                </div>
             </div>
         </div>
     </div>
 
-</div>  
+    // ****************************************************************************
+    // ********************************** Render **********************************
+    // ****************************************************************************
 
 
     render() {
@@ -76,7 +101,7 @@ class Home extends Component {
                             </div>
                             <div className='subheading-div'>
                             <span className='subheading'>
-                                Im a Computer Science and Mathematics Student at University of California San Diego, who is also working part time at MakeItHappen.NYC.
+                                    Im a Computer Science and Mathematics Student at University of California San Diego, who is also working part time at <a href='http://makeithappen.nyc' style={{ fontWeight: 'bold' }}>MakeItHappen.NYC</a>.
                                 I have a massive passion for learning, the outdoors, and Photography <span className='subheading-aside' style={{display:'block'}} >- ( Check out the Photography Section of my site! ) ***Coming Soon***</span> </span>
                             <span className='subheading'>
                                 My passion for Computer Science started back in 2019 when I took an online course in Web Development. Since then im proud to say, my interests
@@ -110,10 +135,14 @@ class Home extends Component {
                         {Object.values(workRelatedProjects).map(this.generateProjectJSX)}
                         
                     </div>
-                    
+                    <div class="custom-shape-divider-bottom-1644687057">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z" class="shape-fill"></path>
+                        </svg>
+                    </div>
                 </Grid>
 
-                <Grid item className='scrollpage red_page ' style={{minHeight: 0, paddingBottom: '20%'}} xs={12}>
+                <Grid item className='scrollpage blue_page ' style={{ minHeight: 0, paddingBottom: '20%' }} xs={12}>
                     <div className='page-container projects'>
                         <div className='description projects'>
                             <div className="heading-div projects">

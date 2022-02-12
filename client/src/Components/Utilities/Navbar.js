@@ -1,5 +1,5 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@material-ui/core"
-import React from "react";
+import React, { useState, useEffect } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 
 //scss
@@ -9,8 +9,9 @@ import { ForkLeft } from "@mui/icons-material";
 
 export const Navbar = () => {
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState( null );
+  const [anchorElUser, setAnchorElUser] = useState( null );
+  const [comingSoon, setComingSoon] = useState( false )
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
@@ -26,7 +27,12 @@ export const Navbar = () => {
     const handleCloseUserMenu = () => {
       setAnchorElUser(null);
     };
-   
+
+  const handleDisplayComingSoon = () => {
+    setComingSoon( true )
+    setTimeout( () => setComingSoon( false ), 2500 )
+  }
+
     
 const pages = ['Dev', 'Photography', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -82,17 +88,33 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
           
         {/* displayed when above medium */}
-        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
-              className='nav-button'
-            >
-              {page}
-            </Button>
-          ))}
+           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+             <Button
+               key={'dev'}
+               onClick={handleCloseNavMenu}
+               sx={{ my: 2, color: 'white', display: 'block' }}
+               className='nav-button'
+             >
+               Dev
+             </Button>
+             <Button
+               key={'photography'}
+               onClick={handleDisplayComingSoon}
+               sx={{ my: 2, color: 'white', display: 'block' }}
+               className={`nav-button ${comingSoon && 'coming-soon'}`}
+             >
+               <span className={comingSoon && 'squeeze'}>photography</span>
+               <span className={!comingSoon && 'squeeze'}>Coming Soon...</span>
+             </Button>
+             <Button
+               key={'blog'}
+               onClick={handleDisplayComingSoon}
+               sx={{ my: 2, color: 'white', display: 'block' }}
+               className={`nav-button ${comingSoon && 'coming-soon'}`}
+             >
+               <span className={comingSoon && 'squeeze'}>blog</span>
+               <span className={!comingSoon && 'squeeze'}>Coming Soon...</span>
+             </Button>
         </Box>
 
         {/* right side  */}

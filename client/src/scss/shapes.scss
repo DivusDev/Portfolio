@@ -1,5 +1,8 @@
 @use './constants/colors.scss';
 
+
+// ***** HOME PAGE *****
+
 //First wave
 .custom-shape-divider-top-1644127656 {
     position: absolute;
@@ -65,4 +68,31 @@
     fill: colors.$primary_red;
     position: absolute;
     top:0;
+    z-index: 0;
+}
+
+
+
+
+//triangle blue
+
+
+.custom-shape-divider-bottom-1644687057 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1644687057 svg {
+    position: relative;
+    display: block;
+    width: calc(133% + 1.3px);
+    height: 309px;
+}
+
+.custom-shape-divider-bottom-1644687057 .shape-fill {
+    fill: colors.$primary_blue;
 }

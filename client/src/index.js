@@ -8,6 +8,15 @@ import { BrowserRouter } from "react-router-dom";
 import AppRouter from './AppRouter';
 
 
+//Icons
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faReact, faNodeJs, faAws, faGripfire } from '@fortawesome/free-brands-svg-icons'
+
+library.add( fas, faReact, faNodeJs, faAws, faGripfire )
+
+
 
 ReactDOM.render(
   <React.StrictMode>

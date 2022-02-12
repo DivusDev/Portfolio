@@ -12,6 +12,8 @@ import './scss/shapes.scss'
 
 
 
+
+
 //HOC for protected routes and location functionality
 const ProtectedRoute  = (Component) => {
   // setNewActiveTab(rest.location.pathname)
