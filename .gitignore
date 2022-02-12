@@ -7,4 +7,7 @@ server/node_modules
 server/yarn.lock
 server/yarn-error.log
 
+server/.env.development
+server/.env.production
+
 server/builds/*
