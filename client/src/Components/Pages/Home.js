@@ -21,6 +21,7 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            hawaiianToEnglish: false
         }
     }
 
@@ -28,6 +29,7 @@ class Home extends Component {
     // ********************************** Component Handlers **********************************
     // ****************************************************************************************
 
+    hawaiianToEnglishHandler = ( english = false ) => this.setState( { hawaiianToEnglish: english } )
 
     // ******************************************************************************************
     // ********************************** Component Generators **********************************
@@ -59,6 +61,13 @@ class Home extends Component {
             </div>
         </div>
     </div>
+
+    hawaiianAndEnglishWord = ( english, hawaiian ) => <span className='hawaiian-word '
+        onMouseEnter={() => this.hawaiianToEnglishHandler( true )}
+        onMouseLeave={() => this.hawaiianToEnglishHandler()}
+        style={{ width: `${english.length > hawaiian.length ? english.length - .7 : hawaiian.length - .7}rem` }} >
+        <span className={` squeezer ${this.state.hawaiianToEnglish ? '' : 'squeeze'}`} >{english}</span>
+        <span className={` squeezer ${this.state.hawaiianToEnglish ? 'squeeze' : ''}`} >{hawaiian}</span></span>
 
     // ****************************************************************************
     // ********************************** Render **********************************
@@ -100,12 +109,17 @@ class Home extends Component {
                                 <span className='heading'>About Me</span>
                             </div>
                             <div className='subheading-div'>
-                            <span className='subheading'>
+                                <span className='subheading'>
                                     Im a Computer Science and Mathematics Student at University of California San Diego, who is also working part time at <a href='http://makeithappen.nyc' style={{ fontWeight: 'bold' }}>MakeItHappen.NYC</a>.
-                                I have a massive passion for learning, the outdoors, and Photography <span className='subheading-aside' style={{display:'block'}} >- ( Check out the Photography Section of my site! ) ***Coming Soon***</span> </span>
-                            <span className='subheading'>
-                                My passion for Computer Science started back in 2019 when I took an online course in Web Development. Since then im proud to say, my interests
-                                have spiraled out of control and I'm now working in the field and now hold degrees in Physics, Mathematics, and Computer Science.</span>
+                                </span>
+                                <span className='subheading'>
+                                    My passion for Computer Science started back in 2019 when I took an online course in Web Development. Since then im proud to say, my interests
+                                    have spiraled out of control and I'm now working in the field and now hold degrees in Physics, Mathematics, and Computer Science.
+                                </span>
+                                <span className='subheading'>
+                                    Growing up in Hawaii has led me to have an active spirit full of nothing but{this.hawaiianAndEnglishWord( 'Love', 'Aloha' )}. I care deeply about our{this.hawaiianAndEnglishWord( 'Land', "Ain'a" )}and am committed to doing everything I can to preserve its natural beauty.
+                                    My most passionate hobbies include Landscape Photography, Astrophotography, Hiking, Camping, and Software Development.
+                                </span>
                             </div>
                             
                         </div>

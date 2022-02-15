@@ -20,7 +20,7 @@
     span{
         transition: transform 1s, color .5s ;
         position: absolute;
-        .squeeze { transform:scale(0); color:colors.$primary_blue; }
+        .squeeze { transform:scale(0); color:transparent; }
     }
 
 }

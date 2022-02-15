@@ -16,11 +16,15 @@ a, a:active {
 
 
 
+span.squeezer {
+        transition: transform 1s, color .5s ;
+        position: absolute;
+        &.squeeze { transform:scale(0); color:transparent; }
+    }
 
 
 
-
-
+.invert-img { filter:invert(1) }
 
 
 

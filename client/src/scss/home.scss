@@ -493,3 +493,12 @@
    
 }
 
+.hawaiian-word {
+    display: inline-block;
+    position: relative;
+    height: 1.45rem;
+    &:hover { cursor: pointer; }
+    span {
+        left: .5rem;
+    }
+}

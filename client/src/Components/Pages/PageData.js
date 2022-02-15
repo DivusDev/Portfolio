@@ -10,32 +10,47 @@ const pgSQLIcon = () => <a href='https://www.postgresql.org/'><FontAwesomeIcon i
 const awsIcon = () => <a href='https://aws.amazon.com/'><FontAwesomeIcon icon="fa-brands fa-aws" size='2x' /></a>
 const firebaseIcon = () => <a href='https://firebase.google.com/'><FontAwesomeIcon icon="fa-brands fa-gripfire" size='2x' /></a>
 const p5jsIcon = () => <a href='https://p5js.org/' className='p5js'>p5*</a>
+const rubyIcon = () => <a href='https://www.ruby-lang.org/en/'><img className='invert-img' src="https://img.icons8.com/ios-filled/50/000000/ruby-programming-language.png" /></a>
+const railsIcon = () => <a href='https://rubyonrails.org/'><img className='invert-img' src="https://img.icons8.com/windows/32/000000/ruby-on-rails.png" /></a>
 
 
 
 
 export const workRelatedProjects = {
-    'wgae': {
-        title: 'Micro AI Telescope Interface',
-        description: <span>Interface to allow users to request to
-            use a the micro AI telescope. Complete with image hosting, user log-in, security software,
-            interface with AWS. AWS solutions for all database, user needs, and hosting.</span>,
-        css_class_name: 'password_app',
+    'zeus': {
+        title: 'WGAE Backend Redesign',
+        subheading: <><span>8/2020 - Present</span><span style={{ marginLeft: '4rem' }}>Project is Proprietary</span></>,
+        description: <><span>Interface to allow employees to manage sensitive billing data for the thousands of members of <a href='https://www.wgaeast.org/mo/'>WGAE</a>.
+            Current legacy application was built in Java 20 years ago. Project Size: 50,000 Lines.</span>
+            <p> Tasked with building a fresh app that mimics the functionality of the legacy application, from the ground up
+                with added Twenty-First Century functionality such as:</p>
+            <ul>
+                <li> <strong>Query Optimization:</strong> 300% Faster on Average, </li>
+                <li> <strong>Data Processing Optimization:</strong> 100,000% Measurable Performance Increase</li>
+                <li> <strong>Dynamic CSV Processing</strong></li>
+
+            </ul>
+            <p><strong>Understand > Build > Test</strong></p>
+            <p>Current Size: 14,000 lines. Team Size: <strong>Solo.</strong> </p>
+
+        </>,
+        css_class_name: 'zeus',
         leftOrRight: 'left',
         projectURL: 'http://localhost:8080/password',
-        icons: [reactIcon(), nodeIcon(), awsIcon()]
+        icons: [reactIcon(), nodeIcon(), pgSQLIcon()]
 
 
     },
-    'zeus': {
-        title: 'Micro AI Telescope Interface',
+    'wgae': {
+        title: 'WGAE Web Improvements',
+        subheading: <><span>11/2019 - 11/2020</span><span style={{ marginLeft: '4rem' }}>Project is Proprietary</span></>,
         description: <span>Interface to allow users to request to
             use a the micro AI telescope. Complete with image hosting, user log-in, security software,
             interface with AWS. AWS solutions for all database, user needs, and hosting.</span>,
         css_class_name: 'password_app',
         leftOrRight: 'right',
         projectURL: 'http://localhost:8080/password',
-        icons: [reactIcon(), nodeIcon(), awsIcon()]
+        icons: [rubyIcon(), railsIcon(), pgSQLIcon()]
 
 
     },
@@ -70,7 +85,7 @@ export const workRelatedProjects = {
         css_class_name: 'password_app',
         leftOrRight: 'left',
         projectURL: 'http://localhost:8080/password',
-        icons: [reactIcon(), nodeIcon(), awsIcon()]
+        icons: [reactIcon(), nodeIcon(), pgSQLIcon()]
     },
 
 }
