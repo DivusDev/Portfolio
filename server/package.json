@@ -4,7 +4,8 @@
   "description": "Server for my personal portfolio",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "prod-start": "PORT=80 node ./bin/www"
   },
   "author": "",
   "license": "ISC",
