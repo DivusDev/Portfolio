@@ -89,6 +89,6 @@ fi
 echo -e $"\n${CYAN_TEXT} ---------------------"
 echo ' -- Starting Server --'
 echo -e " ---------------------${NORMAL_TEXT}"
-sudo kill -9 $(lsof -t -i:8080);
+sudo kill -9 $(lsof -t -i:80);
 cd ../server;
-npm run start;
+npm run prod-start;
