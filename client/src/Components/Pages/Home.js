@@ -43,7 +43,7 @@ class Home extends Component {
     <div className={`project ${project.leftOrRight}`}>
         <div className={`project-photo-container `}>
                 <div className={`project-photo-backdrop ${project.leftOrRight} ${project.backdropColor ?? ''}`}></div>
-            <a href={project.projectURL}><div className={`project-photo ${project.css_class_name}`}></div></a>
+                <a href={project.projectURL} disabled={!project.projectURL}><div className={`project-photo ${project.css_class_name}`}></div></a>
         </div>
             <div className='project-information'>
                 <div className='project-heading'>

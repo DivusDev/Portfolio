@@ -9,6 +9,20 @@
 
 #### Server 
 Written in Node.js 
+
+###### To Deploy the Server
+
+ssh into the remote machine
+start tmux by typing tmux into the shell
+run the script deploy_server.bash
+follow the prompts
+leave/detach the tmux session by typing Ctrl+b and then d
+
+To check back in on the process:
+log back in 
+Run the command **tmux attach**
+
+If you want to have multiple sessions running side-by-side, you should name each session using Ctrl+b and $. You can get a list of the currently running sessions using tmux list-sessions or simply tmux ls, now attach to a running session with command tmux attach-session -t <session-name>
 ###### React Apps
 The server renders different react apps based on the first query parameter, routing to the portfolio app. 
 

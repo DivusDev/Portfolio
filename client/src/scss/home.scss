@@ -279,31 +279,30 @@
                     cursor: pointer;
 
 
+                    background-size: 500px;
+                    // background-position-x: -50px;
+
                     //different urls for different picture and sizes go here 
-                    &.password_app{
-                        background-image: url('../../public/photos/password_app.PNG');
-                        background-size: 500px;
+                    &.password_app{ 
                         background-position-x: -50px;
+                        background-image: url('../../public/photos/password_app.PNG'); 
                     }
-
-                    &.chat_app {
-                        background-image: url('../../public/photos/chatboxx_app.PNG');
-                        background-size: 500px;
-                        background-position-x: -50px;
-                    }
-
-                    &.nbody {
-                        background-image: url('../../public/photos/nbody.PNG');
-                        background-size: 500px;
-                        background-position-x: -50px;
-                    }
+                    &.chat_app { background-image: url('../../public/photos/chatboxx_app.PNG'); }
+                    &.nbody { background-image: url('../../public/photos/nbody.PNG'); }
+                    &.wgae_web{ background-image: url('../../public/photos/wgae_app.png') }
+                    &.iil{ background-image: url('../../public/photos/iil.png') }
+                    &.perseus{ background-image: url('../../public/photos/perseus.png') }
+                    &.lydahill{ background-image: url('../../public/photos/lydahill.png') }
+                    &.singularity{ background-image: url('../../public/photos/singularity.png') }
                 } 
 
                 //hover over photo container
                 &:hover {
                     .project-photo-backdrop{
-                        &.left{ transform: translate( 40px, -40px ) }
-                        &.right{ transform: translate( -40px, -40px ) }
+                        height: 440px;
+                        width: 440px;
+                        &.left{ transform: translate( 20px, -60px ) }
+                        &.right{ transform: translate( -60px, -60px ) }
                     }
                 }
             }
@@ -351,8 +350,10 @@
                         text-shadow: none;
                         color: white;
                         transition: .3s;
+                        img { transition: .3s }
                         &:hover {
                             color: grey;
+                            img { filter: invert(.45) }
                         }
                         &:active {
                             color: white;
