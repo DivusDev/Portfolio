@@ -113,7 +113,7 @@ export const personalProjects = {
         css_class_name: 'password_app',
         leftOrRight: 'left',
         backdropColor: 'backdrop_grey',
-        projectURL: 'http://localhost:8080/password',
+        projectURL: 'http://tristan-s.com/password',
         icons: [reactIcon(), nodeIcon()]
         
     },
@@ -132,7 +132,7 @@ export const personalProjects = {
         css_class_name: 'nbody',
         leftOrRight: 'left',
         backdropColor: 'backdrop_grey',
-        projectURL: 'https://localhost:8080/nbody',
+        projectURL: 'https://tristan-s.com/nbody',
         icons: [reactIcon(), nodeIcon(), p5jsIcon()]
     },
 }

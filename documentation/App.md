@@ -23,6 +23,8 @@ log back in
 Run the command **tmux attach**
 
 If you want to have multiple sessions running side-by-side, you should name each session using Ctrl+b and $. You can get a list of the currently running sessions using tmux list-sessions or simply tmux ls, now attach to a running session with command tmux attach-session -t <session-name>
+
+The client must have a proxy field in the package.json wiith the server ip or it will not run properly
 ###### React Apps
 The server renders different react apps based on the first query parameter, routing to the portfolio app. 
 
@@ -31,6 +33,8 @@ Portfolio app can be found in the client folder.
 Other applications rendered are only stored locally and not checked in. They will have to be built and placed inside ***server/builds/****
 
 When building and importing new applications pay special attention to the naming conventions in server folder
+
+All react apps must have proxy fields with the server ip and homepage fields with their links to their served pages in the package.json
 
 ###### API
 
