@@ -21,7 +21,8 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            hawaiianToEnglish: false
+            hawaiianToEnglish: false,
+            showProprietaryMessage: false,
         }
     }
 
@@ -30,6 +31,12 @@ class Home extends Component {
     // ****************************************************************************************
 
     hawaiianToEnglishHandler = ( english = false ) => this.setState( { hawaiianToEnglish: english } )
+
+    showProprietaryMessageHandler = ( ) => {
+        this.setState( { showProprietaryMessage: true } )
+        setTimeout(() =>  this.setState( { showProprietaryMessage: false } ) , 1000)
+        }
+
 
     // ******************************************************************************************
     // ********************************** Component Generators **********************************
@@ -43,7 +50,8 @@ class Home extends Component {
     <div className={`project ${project.leftOrRight}`}>
         <div className={`project-photo-container `}>
                 <div className={`project-photo-backdrop ${project.leftOrRight} ${project.backdropColor ?? ''}`}></div>
-                <a href={project.projectURL} disabled={!project.projectURL}><div className={`project-photo ${project.css_class_name}`}></div></a>
+                { !!project.projectURL ? <a href={project.projectURL} disabled={!project.projectURL}><div className={`project-photo ${project.css_class_name}   `}></div></a>
+                : <div ><div className={` proprietary_message ${this.state.showProprietaryMessage && 'show'}`} onClick={this.showProprietaryMessageHandler} > Proprietary </div><div className={`project-photo ${project.css_class_name}   `}></div></div> }
         </div>
             <div className='project-information'>
                 <div className='project-heading'>

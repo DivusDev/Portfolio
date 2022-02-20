@@ -232,11 +232,12 @@
     .projects-container {
         display: block;
         width: 100%;
-        padding-top: 2rem;
+        padding-top: 4rem;
         .project {
             display: flex;
             justify-content: space-around;
-
+            margin-bottom: 2rem;
+            
             &.left {   // picture on left
                 flex-direction: row;
             }
@@ -303,6 +304,33 @@
                         width: 440px;
                         &.left{ transform: translate( 20px, -60px ) }
                         &.right{ transform: translate( -60px, -60px ) }
+                    }
+                }
+
+
+                .proprietary_message {
+                    position: absolute;
+                    z-index: 3;
+                    font-size: 4rem;
+                    font-weight: bold;
+                    color: transparent;
+                    height: 395px;
+                    width: 395px;
+                    background-color: transparent;
+                    border-radius: 20px;
+                    align-items: center;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    border: 3px solid;
+                    border-color: transparent;
+                    transition: 1s;
+                    cursor: pointer;
+                    &.show{
+                        border-color:  red;
+                        color: red;
+                        background-color: rgba(255, 0, 0, 0.267);
+
                     }
                 }
             }
