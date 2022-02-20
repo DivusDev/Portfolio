@@ -128,11 +128,20 @@ export const personalProjects = {
     },
     'nbody' : {
         title: 'N-Body Problem',
-        description: 'Small canvas project simulating the effects of gravity on randomly sized objects. Press L to turn off lines, T to spawn a tiny meteor, F to speed up, S to slow down. Build in a matter of hours and only a silly project.',
+        description: <>
+        <p>Small canvas project simulating the effects of gravity on randomly sized objects.</p>
+        <ul>
+            <li>Press L to turn off lines</li>
+            <li>T to spawn a tiny meteor</li>
+            <li>F to speed up</li>
+            <li> S to slow down</li>
+        </ul>
+        <p>This project was built in a matter of hours as small interest from a conversation</p>
+        </> ,
         css_class_name: 'nbody',
         leftOrRight: 'left',
         backdropColor: 'backdrop_grey',
-        projectURL: 'https://tristan-s.com/nbody',
+        projectURL: 'http://tristan-s.com/nbody',
         icons: [reactIcon(), nodeIcon(), p5jsIcon()]
     },
 }
