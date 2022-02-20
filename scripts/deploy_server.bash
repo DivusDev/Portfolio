@@ -11,7 +11,7 @@ GREEN_TEXT='\033[1;32m'
 NORMAL_TEXT='\033[0m' # No Color
 
 
-passwordAbsolutePath='/home/tschw/projects/password-generator'
+passwordAbsolutePath=''
 
 
 # ERROR CHECKING
@@ -89,6 +89,6 @@ fi
 echo -e $"\n${CYAN_TEXT} ---------------------"
 echo ' -- Starting Server --'
 echo -e " ---------------------${NORMAL_TEXT}"
-sudo kill -9 $(lsof -t -i:80);
+sudo kill -9 $(lsof -t -i:3000);
 cd ../server;
 npm run prod-start;
