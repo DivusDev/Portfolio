@@ -38,3 +38,16 @@
     cursor: pointer;
 
 }
+
+
+
+a.nav-download {
+    height: 21px;
+    padding: 6px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .nav-download-text {
+        font-size: 0.875rem;
+    }
+}

@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 //scss
 import '../../scss/navbar.scss' 
 import { ForkLeft } from "@mui/icons-material";
+import { DownloadCSVButton } from "./DownloadCSVButton";
 
 
 export const Navbar = () => {
@@ -115,6 +116,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
                <span className={comingSoon && 'squeeze'}>blog</span>
                <span className={!comingSoon && 'squeeze'}>Coming Soon...</span>
              </Button>
+             <a href='/files/tristan_schwichow_resume.pdf' download target="_blank" className='nav-button nav-download' style={{textAlign:'baseline'}}>
+               <span className='nav-download-text'>RESUME</span>
+             </a>
         </Box>
 
         {/* right side  */}

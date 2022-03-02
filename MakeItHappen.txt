@@ -1,0 +1,10 @@
+Job Description
+Oversaw and carried out the planning and development of multiple full stack projects. Delegated tasks to other developers to meet deadlines. Carried out visionary plans from inception to completion.
+
+Job Achievements
+Single handedly built a full stack application as a submission to a competitive contract for the company and won
+In the process of carrying out the overhaul redesign and development of a 20 year old backend application for a multimillion dollar cooperation. 
+Designed the Architecture for fully normalized scalable relational databases.
+Built a front end HIPAA compliant application for users to take surveys. Data with data being aggregated and displayed to doctors.
+Created an application interfacing with Amazon Web Services to allow access to an electron microscope through APIs.
+Built a dynamic CSV parser able to handle dynamic datasets of all sizes and types to pull data from spreadsheets and insert it into databases

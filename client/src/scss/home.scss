@@ -498,8 +498,14 @@
                 left: 0;
                 bottom: -2rem;
                 position: absolute;
+                
             }
-    
+            &:first-of-type {
+                &::after{
+                    width:2rem;
+                    left: -1rem;
+                }
+            }
         
             &:hover {
                 // get next 4 elements including current one - for more even selections
@@ -507,14 +513,12 @@
                 & + .hover-letter + .hover-letter + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter  {
                     color: colors.$primary_red;
                     text-shadow: 0px 10px #0000002a;
-                    transition: .1s;
+                    transition: .3s;
                     cursor: default;
                     padding-bottom: 20px;
                 }
                 //staggered padding for more even look
-                & { transition: .3s; }
-                & + .hover-letter, & + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .1s; }
-                & + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .3s; }
+                & + .hover-letter, & + .hover-letter + .hover-letter , & + .hover-letter + .hover-letter + .hover-letter, & + .hover-letter + .hover-letter + .hover-letter + .hover-letter { transition: .8s; }
                 
             }
         }

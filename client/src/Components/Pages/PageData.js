@@ -18,9 +18,9 @@ const railsIcon = () => <a href='https://rubyonrails.org/'><img className='inver
 
 export const workRelatedProjects = {
     'perseus': {
-        title: 'WGAE Backend Redesign',
+        title: 'Writers Guild of America, Backend Redesign',
         subheading: <><span>8/2021 - Present</span><span style={{ marginLeft: '4rem' }}>Project is Proprietary</span></>,
-        description: <><span>Interface to allow employees to manage sensitive billing data for the thousands of members of <a href='https://www.wgaeast.org/mo/'>WGAE</a>.
+        description: <><span>Interface to allow employees to manage sensitive billing data for the thousands of members of <a href='https://www.wgaeast.org/mo/' style={{fontWeight:'bold'}}>The Writers Guild of America</a>.
             Current legacy application was built in Java 20 years ago. Project Size: 50,000 Lines.</span>
             <p> Tasked with building a fresh app that mimics the functionality of the legacy application, from the ground up
                 with added Twenty-First Century functionality such as:</p>
@@ -31,7 +31,7 @@ export const workRelatedProjects = {
 
             </ul>
             <p><strong>Understand > Build > Test</strong></p>
-            <p>Current Size: 14,000 lines. Team Size: <strong>Solo.</strong> </p>
+            <p>Team Size: <strong>Solo.</strong> </p>
 
         </>,
         css_class_name: 'perseus',
@@ -60,9 +60,15 @@ export const workRelatedProjects = {
     'singularity': {
         title: 'Micro AI Telescope Interface',
         subheading: <><span>9/2021 - Present</span><span style={{ marginLeft: '4rem' }}>Project is Proprietary</span></>,
-        description: <span>Interface to allow users to request to
-            use a the micro AI telescope. Complete with image hosting, user log-in, security software,
-            interface with AWS. AWS solutions for all database, user needs, and hosting.</span>,
+        description: <>
+            <p>Interface to allow users to request to use a the micro AI telescope.</p>
+            <p>Project Challenges:</p>
+            <ul>
+                <li>AWS integration for all needs</li>
+                <li>Complete with image hosting, user log-in, security software</li>
+                <li>AWS solutions for all database, user needs, and hosting</li>
+            </ul>
+        </>,
         css_class_name: 'singularity',
         leftOrRight: 'left',
         icons: [reactIcon(), nodeIcon(), awsIcon()]
@@ -92,9 +98,15 @@ export const workRelatedProjects = {
     'iil': {
         title: 'Institute for International Learning',
         subheading: <><span>1/2021 - 9/2021</span></>,
-        description: <span>Interface to allow users to request to
-            use a the micro AI telescope. Complete with image hosting, user log-in, security software,
-            interface with AWS. AWS solutions for all database, user needs, and hosting.</span>,
+        description: <>
+        <span> Large scale ecommerce site for purchasing of classes. Scalable searching with multiple parameters over 1000s of datapoints</span>,
+        <p>Project Highlights Include:</p>
+        <ul>
+            <li><strong>Scaleable Searching:</strong> With 1000s of datapoints, multiparameter searches, and autocomplete</li>
+            <li><strong>Data Normalization:</strong> unpacking and repacking large datasets in an efficient manner </li>
+            <li><strong>Dynamic Code Design:</strong> One code base to handle extremely different types of data`` </li>
+        </ul>
+        </>,
         css_class_name: 'iil',
         leftOrRight: 'left',
         projectURL: 'https://search.iil.com/search/',

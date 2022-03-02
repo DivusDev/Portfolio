@@ -171,6 +171,7 @@ class Home extends Component {
                                 <span className='heading'>Personal Projects</span>
                             </div>
                         </div>
+                        <div style={{color: 'grey'}}> DISCLAIMER: My personal projects are quite old and do not show my current ability. I have been too busy with both work and school to make current projects. They are here to show you my passion for coding runs deep.</div>
 
                         {Object.values(personalProjects).map(this.generateProjectJSX)}
                         
