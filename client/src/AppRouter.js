@@ -8,8 +8,6 @@ import { Navbar } from "./Components/Utilities/Navbar";
 import './scss/override.scss'
 import './scss/shapes.scss'
 
-//carousel css
-import 'bear-react-carousel/dist/index.css';
 
 // Components
 
