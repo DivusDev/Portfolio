@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import '../../scss/navbar.scss' 
 import { ForkLeft } from "@mui/icons-material";
 import { DownloadCSVButton } from "./DownloadCSVButton";
+import { Link } from "react-router-dom";
 
 
 export const Navbar = () => {
@@ -41,14 +42,14 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
    return (
    <AppBar position="static">
     <Container maxWidth="xl">
-      <Toolbar disableGutters className>
+      <Toolbar disableGutters className=''>
 
         {/* Displayed when above medium */}
    
         {/* Displayed when below medium */}
         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
           <IconButton
-            size="large"
+            size="medium"
             aria-label="account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
@@ -77,7 +78,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
           >
             {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">{page}</Typography>
+                <Typography >{page}</Typography>
               </MenuItem>
             ))}
           </Menu>
@@ -85,38 +86,37 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
         {/* displayed when below medium */}
-          <div className='navbar-logo'></div>
+         <Link to='/'> <div className='navbar-logo'></div></Link>
 
           
         {/* displayed when above medium */}
            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-             <Button
+             <Link
                key={'dev'}
-               onClick={handleCloseNavMenu}
+              to='/'
                sx={{ my: 2, color: 'white', display: 'block' }}
-               className='nav-button'
+               className='nav-button nav-download'
              >
-               Dev
-             </Button>
-             <Button
+               DEV
+             </Link>
+             <Link
                key={'photography'}
-               onClick={handleDisplayComingSoon}
+               to='/photography'
                sx={{ my: 2, color: 'white', display: 'block' }}
-               className={`nav-button ${comingSoon && 'coming-soon'}`}
+               className={`nav-button nav-download`}
              >
-               <span className={comingSoon && 'squeeze'}>photography</span>
-               <span className={!comingSoon && 'squeeze'}>Coming Soon...</span>
-             </Button>
+               <span className="nav-download-text">PHOTOGRAPHY</span>
+             </Link>
              <Button
                key={'blog'}
                onClick={handleDisplayComingSoon}
                sx={{ my: 2, color: 'white', display: 'block' }}
                className={`nav-button ${comingSoon && 'coming-soon'}`}
              >
-               <span className={comingSoon && 'squeeze'}>blog</span>
-               <span className={!comingSoon && 'squeeze'}>Coming Soon...</span>
+               <span className={comingSoon ? 'squeeze': ''}>blog</span>
+               <span className={!comingSoon ? 'squeeze' : ''}>Coming Soon...</span>
              </Button>
-             <a href='/files/tristan_schwichow_resume.pdf' download target="_blank" className='nav-button nav-download' style={{textAlign:'baseline'}}>
+             <a href='/files/tristan_schwichow_resume.pdf' download target="_blank" className='nav-button nav-download' >
                <span className='nav-download-text'>RESUME</span>
              </a>
         </Box>

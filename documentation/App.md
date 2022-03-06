@@ -48,6 +48,19 @@ When building and importing new applications pay special attention to the naming
 
 All react apps must have proxy fields with the server ip and homepage fields with their links to their served pages in the package.json
 
+
+>"proxy": "http://localhost:3000/password",
+>"homepage": "/password"
+
+****
+###### Server design flow
+
+NGINX port 80 routes traffic to port 3000
+Server runs on port 3000
+Server serves react apps on specific domains
+
+
+
 ###### API
 
 API routes are designated with the query parameter ***/api/****
