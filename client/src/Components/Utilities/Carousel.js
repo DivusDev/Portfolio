@@ -24,6 +24,9 @@ const imageNames = [
   'manana_birds.jpg',
   'sunstar_palm_hdr_warm.jpg',
   'two_trees_touching.jpg',
+  'sleeping_giant_crop-Edit.jpg',
+  'olomana_misty.jpg',
+  'kokohead_wide_edited-Edit.jpg'
 ]
 
 const Carousel = () => {

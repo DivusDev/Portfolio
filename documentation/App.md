@@ -52,6 +52,11 @@ All react apps must have proxy fields with the server ip and homepage fields wit
 >"proxy": "http://localhost:3000/password",
 >"homepage": "/password"
 
+###### HTML Apps
+
+Make sure to include the files with app.use in app.js
+also give them a specific route following the examples like playfair-cypher and nbody
+
 ****
 ###### Server design flow
 

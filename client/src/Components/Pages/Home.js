@@ -97,7 +97,7 @@ class Home extends Component {
                         </svg>
                     </div>
                         {/* Actual title */}
-                        <span className='title-intro'>Hi, i'm</span>
+                        <span className='title-intro'>Hi, I'm</span>
                         <span className='title-name'>Tristan Schwichow</span>
                         <span className='title-subheading'>
                             {this.generateHoverText("I'm a Software Engineer, specializing in building and maintaining large scale React and SQL Solutions.")
