@@ -48,14 +48,18 @@ app.use( '/api', apiRouter );
 // when going to `/app2`, serve the files at app2/build/* as static files
 app.use('/password', express.static(path.join(__dirname, 'builds/password')))
 app.use('/nbody', express.static(path.join(__dirname, 'builds/nbody')))
+app.use('/playfair', express.static(path.join(__dirname, 'builds/playfair-cypher')))
 
 // when going to `/`, serve the files at mainApp/build/* as static files
 app.use(express.static(path.join(__dirname, 'builds/portfolio')))
 
 
-// These are necessary for routing within react
+// These are necessary for routing within react 
 app.get('password/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/builds/password/index.html'))
+})
+app.get('playfair/*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/builds/playfair-cypher/index.html'))
 })
 app.get('nbody/*', (req, res) => {
     res.sendFile(path.join(__dirname + '/builds/nbody/index.html'))
