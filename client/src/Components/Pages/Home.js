@@ -104,7 +104,7 @@ class Home extends Component {
                             }</span>
                         <span className='title-subheading'>Currently making dreams reality with MakeItHappen.NYC</span>
                         <div className='in-touch-button'>
-                        <a href="mailto:tschwichow@gmail.com?subject=Software%20Engineering%20Opportunity&amp;body=I%20dont%20Bite%20:)%0D%0DYou%20can%20also%20reach%20me%20at%20808%20347%200684%0D" className="button">GET IN TOUCH</a>
+                            <a href="mailto:tschwichow@gmail.com?subject=Software%20Engineering%20Opportunity&amp;body=Excited to meet you 🥳%0D%0DYou%20can%20also%20reach%20me%20at%20808%20347%200684%0D" className="button">GET IN TOUCH</a>
                         </div>
                     </div>
 
